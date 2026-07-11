@@ -11,6 +11,17 @@ Enterprise Linux administration portfolio featuring LAMP stack deployments, bash
 - **Documentation:** Pending
 - **Description:** Provisioning a Debian-based Linux server, configuring an Apache web server, and securing the perimeter with UFW (Uncomplicated Firewall) to host Everett Technologies' external assets.
 
+## Screenshots
+
+### 1. Apache Service Verification
+![Apache Status](../Screenshots/01-apache-status.png)
+
+### 2. UFW Active Ruleset
+![UFW Status](../Screenshots/02-ufw-status.png)
+
+### 3. Everett Technologies Landing Page
+![Web Page Verification](../Screenshots/03-landing-page.png)
+
 ---
 
 ## 📁 Repository Directory Structure
