@@ -24,11 +24,11 @@
 
 ## Screenshots
 
-#### 1. Apache Service Verification
+### 1. Apache Service Verification
 ![Apache Status](../Screenshots/01-apache-status.png)
 
-#### 2. UFW Active Ruleset
+### 2. UFW Active Ruleset
 ![UFW Status](../Screenshots/02-ufw-status.png)
 
-#### 3. Everett Technologies Landing Page
+### 3. Everett Technologies Landing Page
 ![Web Page Verification](../Screenshots/03-landing-page.png)
