@@ -13,14 +13,14 @@ Enterprise Linux administration portfolio featuring LAMP stack deployments, bash
 
 ## Screenshots
 
-### 1. Apache Service Verification
-![Apache Status](../Screenshots/01-apache-status.png)
+## 1. Apache Service Verification
+![Apache Status](../Screenshots/1.%20Apache%20Service%20Verifivation.png)
 
-### 2. UFW Active Ruleset
-![UFW Status](../Screenshots/02-ufw-status.png)
+## 2. UFW Active Ruleset
+![UFW Status](../Screenshots/2.%20UFW%20Active%20Ruleset.png)
 
-### 3. Everett Technologies Landing Page
-![Web Page Verification](../Screenshots/03-landing-page.png)
+## 3. Everett Technologies Landing Page
+![Web Page Verification](../Screenshots/3.%20Everett%20Technologies%20Landing%20Page.png)
 
 ---
 
