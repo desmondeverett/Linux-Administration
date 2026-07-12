@@ -18,9 +18,14 @@
 
 ## Lessons Learned
 
-* **Service Management:** Demonstrated the ability to deploy and verify daemon states using `systemctl`, ensuring critical infrastructure remains highly available.
-* **Perimeter Security:** Applied the Principle of Least Privilege to the server's network interfaces, tightly controlling inbound traffic using UFW.
-* **Open-Source Hosting:** Successfully bridged command-line configuration with a live, accessible web asset for the organization.
+- **Service Management:** Demonstrated the ability to deploy and verify daemon states using `systemctl`, ensuring critical infrastructure remains highly available.
+- **Perimeter Security:** Applied the Principle of Least Privilege to the server's network interfaces, tightly controlling inbound traffic using UFW.
+- **Open-Source Hosting:** Successfully bridged command-line configuration with a live, accessible web asset for the organization.
+
+### 🔧 Troubleshooting & Resolutions
+- **Dormant Services on Install:** Encountered an issue where the Apache web server did not automatically start after installation. *Resolution:* Identified that security-focused distributions (like Kali Linux) restrict network daemons from auto-starting to prevent accidental exposure. Manually forced the daemon to start and enable on boot using `sudo systemctl enable --now apache2`.
+- **Missing Core Utilities:** Received a `command not found` error when attempting to configure the UFW firewall. *Resolution:* Recognized that Kali Linux utilizes raw `iptables` by default and lacks the UFW package out-of-the-box. Rectified this by manually pulling the package from the repositories via `sudo apt install ufw -y`.
+- **Markdown Rendering Issues:** Screenshots initially failed to render in the GitHub repository due to broken pathing. *Resolution:* Corrected the relative file paths by utilizing `../` to traverse up a directory level and applied `%20` URL encoding to handle spaces in the image filenames, successfully restoring the documentation visuals.
 
 ## Screenshots
 
