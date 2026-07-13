@@ -8,8 +8,7 @@ Enterprise Linux administration portfolio featuring LAMP stack deployments, bash
 - **Documentation:** [View Lab Documentation](./Labs/Lab-01-Enterprise-Web-Server.md)
 - **Description:** Provisioning a Debian-based Linux server, configuring an Apache web server, and securing the perimeter with UFW (Uncomplicated Firewall) to host Everett Technologies' external assets.
 
-### 📸 Lab 1 Verification
-
+#### 📸 Lab 1 Verification
 **1. Apache Service Verification**
 ![Apache Status](<./Screenshots/1. Apache Service Verifivation.png>)
 
@@ -21,19 +20,17 @@ Enterprise Linux administration portfolio featuring LAMP stack deployments, bash
 
 ---
 
----
-
-### 🚧 Lab 2: Database Integration (MariaDB/MySQL)
-- **Status:** ⏳ In Progress
-- **Documentation:** *Coming Soon*
+### ✅ Lab 2: Database Integration (MariaDB/MySQL)
+- **Status:** ✅ Completed
+- **Documentation:** [View Lab Documentation](./Labs/Lab-02-Database-Integration.md)
 - **Description:** Securing and configuring a backend MariaDB database for Everett Technologies' web applications, including service account creation and PHP connectivity testing to complete the LAMP stack.
 
 #### 📸 Lab 2 Verification
 **1. MariaDB Service Status**
-*[Screenshot: Active Database Service - Coming Soon]*
+![MariaDB Service Status](./Screenshots/1-mariaDB-Service-Status.png)
 
 **2. PHP Database Connectivity Test**
-*[Screenshot: Web/DB Connection Success - Coming Soon]*
+![PHP Database Connectivity Test](./Screenshots/2-PHP-Database-Connectivity.png)
 
 ---
 
@@ -62,7 +59,6 @@ Enterprise Linux administration portfolio featuring LAMP stack deployments, bash
 
 **2. Fail2ban Active Jails**
 *[Screenshot: Fail2ban Status Output - Coming Soon]*
-
 
 ---
 
