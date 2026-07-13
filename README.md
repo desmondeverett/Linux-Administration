@@ -10,6 +10,21 @@ Enterprise Linux administration portfolio featuring LAMP stack deployments, bash
 - **Documentation:** [View Lab Documentation](Labs/Lab-01-Enterprise-Web-Server.md)
 - **Description:** Provisioning a Debian-based Linux server, configuring an Apache web server, and securing the perimeter with UFW (Uncomplicated Firewall) to host Everett Technologies' external assets.
 
+## 🚧 Lab 2: Database Integration (MariaDB/MySQL)
+- **Status:** ⏳ In Progress
+- **Documentation:** *Coming Soon*
+- **Description:** Securing and configuring a backend MariaDB database for Everett Technologies' web applications, including service account creation and PHP connectivity testing to complete the LAMP stack.
+
+## 📅 Lab 3: Automated Server Backups (Bash & Cron)
+- **Status:** 🗓️ Planned
+- **Documentation:** *Coming Soon*
+- **Description:** Developing custom Bash scripts to archive `/var/www/html` and Apache configurations, scheduled via cron jobs for automated nightly disaster recovery.
+
+## 📅 Lab 4: SSH Hardening & Intrusion Prevention
+- **Status:** 🗓️ Planned
+- **Documentation:** *Coming Soon*
+- **Description:** Hardening remote access by enforcing SSH key-pair authentication and deploying Fail2ban to actively mitigate automated brute-force attacks against the server.
+  
 ---
 
 ## 📸 Screenshots
