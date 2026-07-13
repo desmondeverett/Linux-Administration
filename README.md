@@ -34,17 +34,17 @@ Enterprise Linux administration portfolio featuring LAMP stack deployments, bash
 
 ---
 
-### 📅 Lab 3: Automated Server Backups (Bash & Cron)
-- **Status:** 🗓️ Planned
-- **Documentation:** *Coming Soon*
+### ✅ Lab 3: Automated Server Backups (Bash & Cron)
+- **Status:** ✅ Completed
+- **Documentation:** [View Lab Documentation](./Labs/Lab-03-Automated-Server-Backups.md)
 - **Description:** Developing custom Bash scripts to archive `/var/www/html` and Apache configurations, scheduled via cron jobs for automated nightly disaster recovery.
 
 #### 📸 Lab 3 Verification
-**1. Active Cron Job Schedule**
-*[Screenshot: Crontab Output - Coming Soon]*
+**1. Successful Archive Creation**
+![Successful Archive Creation](./Screenshots/1-Successful-Archive-Creation.png)
 
-**2. Successful Archive Creation**
-*[Screenshot: .tar.gz File Verification - Coming Soon]*
+**2. Active Cron Job Schedule**
+![Active Cron Job Schedule](./Screenshots/2-Active-Cron-Job-Schedule.png)
 
 ---
 
