@@ -28,7 +28,24 @@ Modern Debian deployments secure MariaDB by default during installation (enforci
 - exit;*(Documentation notes and commands will be logged here)*
 
 ### Phase 4: PHP Connectivity Test
-*(Documentation notes and commands will be logged here)*
+- sudo nano /var/www/html/db_test.php
+- <?php
+$servername = "localhost";
+$username = "everett_admin";
+$password = "StrongPassword123!";
+$dbname = "everett_db";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "<h2>Everett Technologies Database Connection: SUCCESS!</h2>";
+?>
+- sudo systemctl restart apache2
+- curl http://localhost/db_test.php
 
 ---
 
