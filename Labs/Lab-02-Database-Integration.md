@@ -32,7 +32,7 @@ Modern Debian deployments secure MariaDB by default during installation (enforci
 - <?php
 $servername = "localhost";
 $username = "everett_admin";
-$password = "StrongPassword123!";
+$password = "Password123!";
 $dbname = "everett_db";
 
 // Create connection
