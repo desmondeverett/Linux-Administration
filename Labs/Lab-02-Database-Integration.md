@@ -12,10 +12,10 @@
 ## 🛠️ Execution Steps
 
 ### Phase 1: Installation & Service Verification
-sudo apt update
-sudo apt install mariadb-server php-mysql -y
-sudo systemctl enable mariadb
-sudo systemctl status mariadb
+- sudo apt update
+- sudo apt install mariadb-server php-mysql -y
+- sudo systemctl enable mariadb
+- sudo systemctl status mariadb
 
 ### Phase 2: Securing the Database
 *(Documentation notes and commands will be logged here)*
