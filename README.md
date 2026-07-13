@@ -58,7 +58,7 @@ Enterprise Linux administration portfolio featuring LAMP stack deployments, bash
 ![SSH Key Authentication Requirement](./Screenshots/1-SSH-Key-Auth-Requirement.png)
 
 **2. Fail2ban Active Jails**
-![Fail2ban Active Jails](./Screenshots/2-Fail2ban-Active-Jails.png)
+![Fail2ban Active Jails](./Screenshots/03-Jails-Close-up.png)
 
 ---
 
