@@ -60,7 +60,20 @@ curl http://localhost/db_test.php
 ```
 
 ---
+## 🧠 Lessons Learned & Troubleshooting
 
+During the execution of this lab, several real-world administrative challenges were encountered and successfully resolved:
+
+### 1. OS-Level Security vs. Manual Hardening
+- **Challenge:** Attempting to run the traditional `sudo mariadb-secure-installation` hardening script resulted in an `Error 2002 (HY000): Can't connect to local server through socket` failure.
+- **Resolution:** By reading the OS-level terminal warnings, it was determined that modern Debian distributions automatically secure the MariaDB installation out-of-the-box (enforcing `unix_socket` authentication and stripping test databases). Rather than forcing a redundant script, manual execution was bypassed in accordance with Debian OS documentation.
+
+### 2. Silent PHP Crashes & Log Auditing
+- **Challenge:** Executing the `curl http://localhost/db_test.php` command to verify backend connectivity returned a completely blank terminal response rather than a visible web error or success message.
+- **Resolution:** To diagnose the silent crash, we audited the internal Apache error logs (`sudo tail -n 5 /var/log/apache2/error.log`). 
+- **Root Cause:** The logs revealed a hidden `PHP Fatal error: Access denied for user`. This indicated a password mismatch between the newly provisioned MariaDB service account and the `$password` variable hardcoded into the PHP script. Updating the variable in the PHP file to correctly match the SQL configuration instantly resolved the authentication failure.
+
+---
 ## 📸 Verification & Screenshots
 
 **1. MariaDB Service Status**
