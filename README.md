@@ -48,17 +48,17 @@ Enterprise Linux administration portfolio featuring LAMP stack deployments, bash
 
 ---
 
-### 📅 Lab 4: SSH Hardening & Intrusion Prevention
-- **Status:** 🗓️ Planned
-- **Documentation:** *Coming Soon*
+### ✅ Lab 4: SSH Hardening & Intrusion Prevention
+- **Status:** ✅ Completed
+- **Documentation:** [View Lab Documentation](./Labs/Lab-04-SSH-Hardening-&-Intrusion.md)
 - **Description:** Hardening remote access by enforcing SSH key-pair authentication and deploying Fail2ban to actively mitigate automated brute-force attacks against the server.
 
 #### 📸 Lab 4 Verification
 **1. SSH Key Authentication Requirement**
-*[Screenshot: Password Authentication Denied - Coming Soon]*
+![SSH Key Authentication Requirement](./Screenshots/1-SSH-Key-Auth-Requirement.png)
 
 **2. Fail2ban Active Jails**
-*[Screenshot: Fail2ban Status Output - Coming Soon]*
+![Fail2ban Active Jails](./Screenshots/2-Fail2ban-Active-Jails.png)
 
 ---
 
