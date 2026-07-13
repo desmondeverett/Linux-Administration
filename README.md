@@ -63,12 +63,6 @@ Enterprise Linux administration portfolio featuring LAMP stack deployments, bash
 **2. Fail2ban Active Jails**
 *[Screenshot: Fail2ban Status Output - Coming Soon]*
 
----
-
-## 📁 Repository Directory Structure
-- **/Labs** — Step-by-step markdown documentation, lessons learned, and verification walkthroughs.
-- **/Screenshots** — Visual proof of successful command outputs, bash scripts, and system configurations.
-- **/Scripts** — Custom Bash automation and provisioning scripts.
 
 ---
 
