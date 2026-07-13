@@ -27,30 +27,31 @@ sudo nano /etc/ssh/sshd_config
 ```
 
 *Locate and update the following directives to match these exact values:*
-```bash
+```text
 PermitRootLogin no
 PasswordAuthentication no
 PubkeyAuthentication yes
 ```
 
-Restart the SSH service to apply the new security rules:
+Test the configuration for syntax errors and restart the SSH service to apply the new security rules:
 ```bash
+sudo sshd -t
 sudo systemctl restart ssh
 ```
 
 ### Phase 3: Installing & Configuring Fail2ban
 Install the intrusion prevention system to actively block brute-force attempts.
 ```bash
+sudo apt update
 sudo apt install fail2ban -y
 ```
 
-Create a local configuration copy (to prevent system updates from overwriting your custom rules) and open it for editing:
+Create a local configuration override file and add the SSH jail rules:
 ```bash
-sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 sudo nano /etc/fail2ban/jail.local
 ```
 
-*Ensure the `[sshd]` jail is enabled and configure the ban parameters (e.g., 5 retries triggers a 1-hour ban):*
+*Paste the following SSH jail configuration:*
 ```ini
 [sshd]
 enabled = true
@@ -77,20 +78,23 @@ sudo fail2ban-client status sshd
 
 ## 🧠 Lessons Learned & Troubleshooting
 
-During the SSH hardening process, a critical administrative safeguard was established:
+During the deployment of these security measures, several critical administrative challenges were encountered and resolved:
 
-### The "Always-Open" SSH Session Rule
-- **Concept:** When modifying the `/etc/ssh/sshd_config` file—specifically when disabling password authentication—there is a massive risk of permanently locking yourself out of the server if the SSH keys were not properly configured or permissions were slightly off.
-- **Application:** Before running `sudo systemctl restart ssh` to apply the hardened rules, **always keep your current, active SSH session open**. Open a completely separate terminal window and attempt to log in using the new key-pair method.
-- **Resolution:** If the key-pair login fails in the second window, the original terminal remains authenticated and connected. This allows you to revert the `PasswordAuthentication no` directive and troubleshoot the keys without losing administrative access to the server.
+### 1. Configuration Typos & The "Always-Open" Rule
+- **Challenge:** A typo was accidentally introduced when modifying the SSH configuration (`PublicAuthentication` instead of `PubkeyAuthentication`). If the service had restarted with this error, it would have crashed and permanently locked out all administrators.
+- **Resolution:** By implementing the "Always-Open" rule (keeping the current authenticated terminal session open while testing in a new window) and utilizing the `sshd -t` syntax checker *before* restarting the service, the typo was identified on line 59 and safely corrected without losing server access.
+
+### 2. Missing Privilege Separation Directories
+- **Challenge:** After correcting the SSH configuration typo, the `sshd -t` check failed with a `Missing privilege separation directory: /run/sshd` error.
+- **Resolution:** Secure services often require temporary runtime directories to manage permissions. This directory was manually created using `sudo mkdir -p /run/sshd`, allowing the service to validate the configuration and restart successfully.
+
+### 3. Fail2ban Configuration Conflicts
+- **Challenge:** When verifying the Fail2ban service, the client returned a socket error (`Failed to access socket path`). Log auditing via `systemctl status fail2ban` revealed that the `jail.local` file contained duplicate `[sshd]` section headers, causing the service to panic and crash.
+- **Resolution:** Rather than modifying the complex default configuration, the `jail.local` file was completely wiped and replaced with *only* the specific override rules required for the SSH jail. This clean configuration allowed the service to parse the rules correctly and initialize the active monitoring jails.
 
 ---
 
 ## 📸 Verification & Screenshots
 
 **1. SSH Key Authentication Requirement**
-*(Simulating a login attempt without the proper private key)*
-![SSH Key Authentication Requirement](../Screenshots/1-SSH-Key-Auth-Requirement.png)
-
-**2. Fail2ban Active Jails**
-![Fail2ban Active Jails](../Screenshots/2-Fail2ban-Active-Jails.png)
+*(Simulating a login attempt without the proper
