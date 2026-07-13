@@ -18,14 +18,14 @@
 - sudo systemctl status mariadb
 
 ### Phase 2: Securing the Database
+Modern Debian deployments secure MariaDB by default during installation (enforcing unix_socket authentication and removing test databases). Manual execution of the mariadb-secure-installation script was bypassed as per Debian OS documentation.
+
+### Phase 3: Provisioning a Service Account
 - CREATE DATABASE everett_db;
 - CREATE USER 'everett_admin'@'localhost' IDENTIFIED BY 'StrongPassword123!';
 - GRANT ALL PRIVILEGES ON everett_db.* TO 'everett_admin'@'localhost';
 - FLUSH PRIVILEGES;
-- exit;
-
-### Phase 3: Provisioning a Service Account
-*(Documentation notes and commands will be logged here)*
+- exit;*(Documentation notes and commands will be logged here)*
 
 ### Phase 4: PHP Connectivity Test
 *(Documentation notes and commands will be logged here)*
