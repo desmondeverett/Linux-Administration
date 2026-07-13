@@ -97,4 +97,8 @@ During the deployment of these security measures, several critical administrativ
 ## 📸 Verification & Screenshots
 
 **1. SSH Key Authentication Requirement**
-*(Simulating a login attempt without the proper
+*(Simulating a login attempt without the proper private key)*
+![SSH Key Authentication Requirement](../Screenshots/1-SSH-Key-Auth-Requirement.png)
+
+**2. Fail2ban Active Jails**
+![Fail2ban Active Jails](../Screenshots/2-Fail2ban-Active-Jails.png)
