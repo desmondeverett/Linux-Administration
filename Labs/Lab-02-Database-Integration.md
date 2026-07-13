@@ -18,7 +18,11 @@
 - sudo systemctl status mariadb
 
 ### Phase 2: Securing the Database
-*(Documentation notes and commands will be logged here)*
+- CREATE DATABASE everett_db;
+- CREATE USER 'everett_admin'@'localhost' IDENTIFIED BY 'StrongPassword123!';
+- GRANT ALL PRIVILEGES ON everett_db.* TO 'everett_admin'@'localhost';
+- FLUSH PRIVILEGES;
+- exit;
 
 ### Phase 3: Provisioning a Service Account
 *(Documentation notes and commands will be logged here)*
